@@ -1,13 +1,21 @@
-td {
-  height: 20px;
+/* td {
+  height: 30px;
   border: 1px solid blue;
   text-align: center;
 }
 
-.pizzaName, .pizzaPrice {
-  width: 100px;
+.pizzaPrice {
+  width: 90px;
+}
+.base {
+  width: 170px;
 }
 
-.checkbox {
+input {
   width: 30px;
+  margin-left: -10px;
+} */
+
+table {
+  text-align: left;
 }

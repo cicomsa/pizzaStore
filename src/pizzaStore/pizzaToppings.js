@@ -18,7 +18,9 @@ export const pizzaToppings = [
   { id: 6,
     name: 'Mix it up',
   },
-  { id: 7.
+  { id: 7,
     name: 'Mix it up',
   }
 ]
+
+export const price = "0.50"

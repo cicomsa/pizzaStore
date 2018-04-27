@@ -1,10 +1,9 @@
 import React, {PureComponent} from 'react'
-import {pizzaBases} from '../pizzaStore/pizzaBases'
-import './PizzaBases.css'
+import {pizzaSauces} from '../pizzaStore/pizzaSauces'
 import {ADD_ITEM, REMOVE_ITEM} from '../actions/checkbox'
 import {connect} from 'react-redux'
 
-class PizzaBasePage extends PureComponent {
+class PizzaSaucePage extends PureComponent {
 
   constructor(props) {
     super(props);
@@ -13,7 +12,6 @@ class PizzaBasePage extends PureComponent {
       checkboxState: true
     }
   }
-
 
   toggle(event) {
     this.setState({
@@ -36,22 +34,22 @@ class PizzaBasePage extends PureComponent {
         <table>
           <thead>
             <tr>
-              <th>Pizza Base</th>
+              <th>Pizza Sauce</th>
               <th>Price</th>
             </tr>
           </thead>
           <tbody>
-            {pizzaBases.map(pizzaBase => (
-              <tr key={pizzaBase.id}>
-                <td className="base">
-                  <input key={pizzaBase.id} type="checkbox"
-                    name="base"
-                    value={pizzaBase.name}
+            {pizzaSauces.map(pizzaSauce => (
+              <tr key={pizzaSauce.id}>
+                <td className="sauce">
+                  <input key={pizzaSauce.id} type="checkbox"
+                    name="sauce"
+                    value={pizzaSauce.name}
                     onChange={this.handleCheckbox}
                     onClick={this.toggle.bind(this)}/>
-                  <label htmlFor="base">{pizzaBase.name}</label>
+                  <label htmlFor="sauce">{pizzaSauce.name}</label>
                 </td>
-                <td className="pizzaPrice">€{pizzaBase.price}</td>
+                <td className="saucePrice">€{pizzaSauce.price}</td>
               </tr>)) }
             </tbody>
         </table>
@@ -66,4 +64,4 @@ const mapStateToProps = function (state) {
   }
 }
 
-export default connect(mapStateToProps )(PizzaBasePage)
+export default connect(mapStateToProps )(PizzaSaucePage)

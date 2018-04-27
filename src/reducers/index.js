@@ -1,7 +1,6 @@
 import checkbox from './checkbox'
-import pizzaBases from './pizzaBases'
+import toppings from './toppings'
 
 export default {
-  checkbox,
-  pizzaBases,
+  checkbox, toppings
 }
