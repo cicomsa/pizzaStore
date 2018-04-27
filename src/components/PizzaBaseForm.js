@@ -1,6 +1,6 @@
 import React, {PureComponent} from 'react'
 import {connect} from 'react-redux'
-import {CHECKBOX} from '../actions/checkbox'
+
 
 
 class GuessForm extends PureComponent {
@@ -16,7 +16,7 @@ class GuessForm extends PureComponent {
 	handleSubmit = (e) => {
 
     e.preventDefault()
-		this.props.dispatch({type:CHECKBOX, payload: this.state.value})
+		this.props.dispatch(() => this.props.ad_item())
 		e.preventDefault()
 
 	}
@@ -27,19 +27,15 @@ class GuessForm extends PureComponent {
 
 			<form onSubmit={this.handleSubmit}>
 				<div>
-					<input name="button" type="checkbox" id="button" value={
-						this.state.value || initialValue.value || ''
-					} onChange={ this.handleChange } />
+					<input name="checkbox" type="radio" id="checkbox"
+          onChange={ this.onChange} />
 				</div>
+
 			</form>
 		)
 	}
 }
 
-const mapStateToProps = function(state) {
-  return console.log({
-    checkbox: state.checkbox,
-  })
-}
 
-export default connect (mapStateToProps)(GuessForm)
+
+export default GuessForm
