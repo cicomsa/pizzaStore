@@ -12,7 +12,7 @@ export const pizzaBases = [
     name: '35cm NY Style',
     price: 13.49
   },
-  { id: 4.
+  { id: 4,
     name: '20cm NY Style',
     price: 6.45
   }
