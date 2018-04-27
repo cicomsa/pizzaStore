@@ -7,20 +7,40 @@ import {connect} from 'react-redux'
 
 class PizzaBasePage extends PureComponent {
 
-	handleSubmit = (e) => {
+  constructor(props) {
+      super(props);
+      /* set the initial checkboxState to true */
+      this.state = {
+        checkboxState: true
+      }
+    }
 
-    e.preventDefault()
-		this.props.dispatch({type:ADD_ITEM,payload: e.target.value})
-    //this.props.dispatch({type:REMOVE_ITEM, payload: this.state.value})
-    e.preventDefault()
 
-	}
+    toggle(event) {
+      this.setState({
+        checkboxState: !this.state.checkboxState
+      });
+    }
+
+addItem = (e) => {
+  if (this.state.checkboxState)
+
+    return this.props.dispatch({type:ADD_ITEM,payload: e.target.value})
+    if (!this.state.checkboxState)
+    return this.props.dispatch({type:REMOVE_ITEM, payload: e.target.value})
+
+}
+
+removeItem = (e) => {
+  this.props.dispatch({type:REMOVE_ITEM, payload: this.state.value})
+}
 
   render() {
 
-
     return (
       <div>
+      {console.log("value")}
+      {console.log(this.state.checkboxState)}
       <table>
         <thead>
           <tr>
@@ -34,7 +54,7 @@ class PizzaBasePage extends PureComponent {
             <tr key={pizzaBase.id}>
               <td className="base">
                 <input key={pizzaBase.id} type="checkbox" name="base" value={pizzaBase.name}
-                 onChange={this.handleSubmit} />
+                 onChange={this.addItem} onClick={this.toggle.bind(this)}/>
                 <label htmlFor="base">{pizzaBase.name}</label>
               </td>
               <td className="pizzaPrice">€{pizzaBase.price}</td>
@@ -45,6 +65,7 @@ class PizzaBasePage extends PureComponent {
         <div>
         </div>
         <p>{this.props.items}</p>
+        <p>{this.state.checkboxState}</p>
       </div>
     )
   }
