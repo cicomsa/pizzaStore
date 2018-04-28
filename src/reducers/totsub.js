@@ -1,12 +1,11 @@
 import {TOTAL, SUBTOTAL} from '../actions/totSub'
 
-export default (state = [], action) => {
+export default (state = 0, action) => {
   switch(action.type) {
     case TOTAL:
       return state
     case SUBTOTAL:
-      let array = state.concat(action.payload)
-      return array
+      return state + action.payload
     default:
       return state
   }

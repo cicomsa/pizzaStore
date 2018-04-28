@@ -14,6 +14,7 @@ class Subtotal extends PureComponent {
     return (
       <div className="shoppingCart">
         <h2>Subtotal</h2>
+        <h4><li>€{this.props.subtotal}</li></h4>
 
       </div>
     );
@@ -22,9 +23,7 @@ class Subtotal extends PureComponent {
 
 const mapStateToProps = function (state) {
   return {
-    sauce: state.sauces,
-    base:state.bases,
-    topping: state.toppings,
+    subtotal: state.totsub
   }
 }
 
