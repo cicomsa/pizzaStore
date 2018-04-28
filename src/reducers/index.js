@@ -1,6 +1,11 @@
-import checkbox from './checkbox'
+import bases from './bases'
 import toppings from './toppings'
+import sauces from './sauces'
+import totSub from './totSub'
 
 export default {
-  checkbox, toppings
+  bases,
+  toppings,
+  sauces,
+  totSub,
 }

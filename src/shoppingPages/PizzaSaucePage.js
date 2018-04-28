@@ -1,6 +1,6 @@
 import React, {PureComponent} from 'react'
 import {pizzaSauces} from '../pizzaStore/pizzaSauces'
-import {ADD_ITEM, REMOVE_ITEM} from '../actions/checkbox'
+import {ADD_SAUCE, REMOVE_SAUCE} from '../actions/sauces'
 import {connect} from 'react-redux'
 
 class PizzaSaucePage extends PureComponent {
@@ -21,13 +21,12 @@ class PizzaSaucePage extends PureComponent {
 
   handleCheckbox = (e) => {
     if (this.state.checkboxState)
-      return this.props.dispatch({type:ADD_ITEM,payload: e.target.value})
+      return this.props.dispatch({type:ADD_SAUCE,payload: e.target.value})
     if (!this.state.checkboxState)
-      return this.props.dispatch({type:REMOVE_ITEM, payload: e.target.value})
+      return this.props.dispatch({type:REMOVE_SAUCE, payload: e.target.value})
   }
 
   render() {
-
 
     return (
       <div>
@@ -60,8 +59,8 @@ class PizzaSaucePage extends PureComponent {
 
 const mapStateToProps = function (state) {
   return {
-    items:state.checkbox
+    items:state.sauces
   }
 }
 
-export default connect(mapStateToProps )(PizzaSaucePage)
+export default connect(mapStateToProps)(PizzaSaucePage)

@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
-import PizzaBasePage from './components/PizzaBasePage'
-import PizzaSaucePage from './components/PizzaSaucePage'
-import PizzaToppingsPage from './components/PizzaToppingsPage'
+import PizzaBasePage from './shoppingPages/PizzaBasePage'
+import PizzaSaucePage from './shoppingPages/PizzaSaucePage'
+import PizzaToppingsPage from './shoppingPages/PizzaToppingsPage'
+import ShoppingCartBases from './shoppingCart/ShoppingCartBases'
+import ShoppingCartSauces from './shoppingCart/ShoppingCartSauces'
+import ShoppingCartToppings from './shoppingCart/ShoppingCartToppings'
 
 
 class App extends Component {
@@ -15,6 +18,16 @@ class App extends Component {
         <PizzaSaucePage/>
         <br></br>
         <PizzaToppingsPage/>
+        <br></br>
+        <hr></hr>
+        <br></br>
+        <h1>Shopping Cart</h1>
+        
+        <ShoppingCartBases/>
+        <br></br>
+        <ShoppingCartSauces/>
+        <br></br>
+        <ShoppingCartToppings/>
       </div>
     );
   }

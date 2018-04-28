@@ -13,10 +13,7 @@ class PizzaToppingPage extends PureComponent {
     this.props.dispatch({type:REMOVE_TOPPING, payload: e.target.value})
   }
 
-
-
   render() {
-
 
     return (
       <div>
@@ -56,4 +53,4 @@ const mapStateToProps = function (state) {
   }
 }
 
-export default connect(mapStateToProps )(PizzaToppingPage)
+export default connect(mapStateToProps)(PizzaToppingPage)

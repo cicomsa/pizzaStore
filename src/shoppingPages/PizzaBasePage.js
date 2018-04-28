@@ -1,7 +1,7 @@
 import React, {PureComponent} from 'react'
 import {pizzaBases} from '../pizzaStore/pizzaBases'
 import './PizzaBases.css'
-import {ADD_ITEM, REMOVE_ITEM} from '../actions/checkbox'
+import {ADD_BASE, REMOVE_BASE} from '../actions/bases'
 import {connect} from 'react-redux'
 
 class PizzaBasePage extends PureComponent {
@@ -14,7 +14,6 @@ class PizzaBasePage extends PureComponent {
     }
   }
 
-
   toggle(event) {
     this.setState({
       checkboxState: !this.state.checkboxState
@@ -23,13 +22,12 @@ class PizzaBasePage extends PureComponent {
 
   handleCheckbox = (e) => {
     if (this.state.checkboxState)
-      return this.props.dispatch({type:ADD_ITEM,payload: e.target.value})
+      return this.props.dispatch({type:ADD_BASE,payload: e.target.value})
     if (!this.state.checkboxState)
-      return this.props.dispatch({type:REMOVE_ITEM, payload: e.target.value})
+      return this.props.dispatch({type:REMOVE_BASE, payload: e.target.value})
   }
 
   render() {
-
 
     return (
       <div>
@@ -37,7 +35,7 @@ class PizzaBasePage extends PureComponent {
           <thead>
             <tr>
               <th>Pizza Base</th>
-              <th>Price</th>
+              <th class="priceTh">Price</th>
             </tr>
           </thead>
           <tbody>
@@ -66,4 +64,4 @@ const mapStateToProps = function (state) {
   }
 }
 
-export default connect(mapStateToProps )(PizzaBasePage)
+export default connect(mapStateToProps)(PizzaBasePage)

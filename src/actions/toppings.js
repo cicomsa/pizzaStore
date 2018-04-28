@@ -3,8 +3,7 @@ export const REMOVE_TOPPING = "REMOVE_TOPPING"
 
 export const add_topping = () => {
   return {
-    type: ADD_TOPPING,
-
+    type: ADD_TOPPING
   }
 }
 

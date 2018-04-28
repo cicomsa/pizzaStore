@@ -1,11 +1,10 @@
-import {ADD_ITEM, REMOVE_ITEM} from '../actions/checkbox'
-
+import {ADD_SAUCE, REMOVE_SAUCE} from '../actions/sauces'
 
 export default (state = [], action) => {
   switch(action.type) {
-    case ADD_ITEM:
+    case ADD_SAUCE:
       return state.concat(action.payload)
-    case REMOVE_ITEM:
+    case REMOVE_SAUCE:
       return state.filter(item => item.id !== action.payload.id)
     default:
       return state
