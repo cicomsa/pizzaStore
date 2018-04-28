@@ -1,31 +1,31 @@
 export const pizzaToppings = [
   {
     id: 1,
-    name: 'White sauce',
+    name: 'Pineapple',
     price: "0.50"
   },
   { id: 2,
-    name: 'Red sauce',
+    name: 'Corn',
     price: "0.50"
   },
   { id: 3,
-    name: 'Double red sauce',
+    name: 'Olives (green)',
     price: "0.50"
   },
   { id: 4,
-    name: 'Mix it up',
+    name: 'Red onion',
     price: "0.50"
   },
   { id: 5,
-    name: 'Mix it up',
+    name: 'Spinach',
     price: "0.50"
   },
   { id: 6,
-    name: 'Mix it up',
+    name: 'Cherry tomatoes',
     price: "0.50"
   },
   { id: 7,
-    name: 'Mix it up',
+    name: 'Chicken',
     price: "0.50"
   }
 ]

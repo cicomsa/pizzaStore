@@ -1,11 +1,11 @@
 import React, {PureComponent} from 'react'
-import {REMOVE_SAUCE} from '../actions/sauces'
+import {REM_SAUCE} from '../actions/sauces'
 import {connect} from 'react-redux'
 
 class ShoppingCartSauces extends PureComponent {
 
   handleCheckbox = (e) => {
-      this.props.dispatch({type:REMOVE_SAUCE,payload: e.target.value})
+      this.props.dispatch({type:REM_SAUCE,payload: e.target.value})
   }
 
   render() {
@@ -13,11 +13,11 @@ class ShoppingCartSauces extends PureComponent {
     return (
       <div>
         <h1>Pizza Sauces</h1>
-          {this.props.sauce.map((sauce,index) => (
-            <h4 key={index}>
-              <li>{sauce.split(',')[0]}</li>
-              <p className="saucePrice">€{sauce.split(',')[1]}</p>
-            </h4>)) }
+        {this.props.sauceName.map((sauce,index) => (
+          <h4 key={index}>
+            <p>{sauce.split(',')[0]}</p>
+            <li className="saucePrice">€{sauce.split(',')[1]}</li>
+          </h4>)) }
         <button onClick={this.handleCheckbox}>Edit choice</button>
       </div>
     )
@@ -26,7 +26,8 @@ class ShoppingCartSauces extends PureComponent {
 
 const mapStateToProps = function (state) {
   return {
-    sauce:state.sauces
+    sauceName: state.sauce
+
   }
 }
 

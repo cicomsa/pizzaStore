@@ -12,10 +12,11 @@ class ShoppingCart extends PureComponent {
     return (
       <div className="shoppingCart">
         <h1>Shopping Cart</h1>
+        <Subtotal/>
         <hr></hr>
-        {this.props.base.length === 1 && <ShoppingCartBases/>}
-        {this.props.sauce.length === 1 && <ShoppingCartSauces/>}
-        {this.props.topping.length >= 1 && this.props.topping.length <= 3 && <ShoppingCartToppings/>}
+        {this.props.baseCart.length === 1 && <ShoppingCartBases/>}
+        {this.props.sauceCart.length === 1 && <ShoppingCartSauces/>}
+        {this.props.toppingCart.length >= 1 && this.props.toppingCart.length <= 3 && <ShoppingCartToppings/>}
 
       </div>
     );
@@ -24,9 +25,9 @@ class ShoppingCart extends PureComponent {
 
 const mapStateToProps = function (state) {
   return {
-    sauce: state.sauces,
-    base:state.bases,
-    topping: state.toppings
+    sauceCart: state.sauce,
+    baseCart:state.base,
+    toppingCart: state.topping
   }
 }
 

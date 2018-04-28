@@ -1,12 +1,14 @@
 import React, {PureComponent} from 'react'
 import './PizzaBases.css'
-import {ADD_BASE} from '../actions/bases'
+import {ADD_BASE, PAY_BASE, BASE} from '../actions/bases'
 import {connect} from 'react-redux'
 
 class PizzaBasePage extends PureComponent {
 
   handleCheckbox = (e) => {
-      this.props.dispatch({type:ADD_BASE,payload: e.target.value})
+      this.props.dispatch({type: ADD_BASE, payload: e.target.value.split(',')[0]})
+      this.props.dispatch({type: BASE, payload: e.target.value})
+      this.props.dispatch({type: PAY_BASE, payload: Number(e.target.value.split(',')[1])})
   }
 
   render() {
@@ -21,7 +23,7 @@ class PizzaBasePage extends PureComponent {
             </tr>
           </thead>
           <tbody>
-            {this.props.pizzaBases.map(pizzaBase => (
+            {this.props.pizzaBases.map((pizzaBase, index) => (
               <tr key={pizzaBase.id}>
                 <td className="base">
                   <input key={pizzaBase.id} type="checkbox"
@@ -42,7 +44,8 @@ class PizzaBasePage extends PureComponent {
 
 const mapStateToProps = function (state) {
   return {
-    pizzaBases:state.pizzaBasess
+    pizzaBases:state.pizzaBasess,
+    price: state.payBase
   }
 }
 

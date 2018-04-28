@@ -1,9 +1,9 @@
-import {TOTAL} from '../actions/totSub'
+import {PAY_BASE} from '../actions/bases'
 
 export default (state = [], action) => {
   switch(action.type) {
-    case TOTAL:
-      return state + action.payload
+    case PAY_BASE:
+      return state.concat(action.payload)
     default:
       return state
   }

@@ -9,9 +9,9 @@ class Store extends PureComponent {
     return (
       <div className="store">
         <h1>NewAgePizza.com</h1>
-        {this.props.base.length === 0 && <PizzaBasePage/>}
-        {this.props.sauce.length === 0 && this.props.base.length === 1 && <PizzaSaucePage/>}
-        {this.props.sauce.length === 1 && this.props.base.length === 1 && this.props.topping.length <= 2 && <PizzaToppingsPage/>}
+        {this.props.baseStore.length === 0 && <PizzaBasePage/>}
+        {this.props.sauceStore.length === 0 && this.props.baseStore.length === 1 && <PizzaSaucePage/>}
+        {this.props.sauceStore.length === 1 && this.props.baseStore.length === 1 && this.props.toppingStore.length <= 2 && <PizzaToppingsPage/>}
       </div>
     );
   }
@@ -19,9 +19,9 @@ class Store extends PureComponent {
 
 const mapStateToProps = function (state) {
   return {
-    sauce: state.sauces,
-    base:state.bases,
-    topping: state.toppings
+    sauceStore: state.sauce,
+    baseStore:state.base,
+    toppingStore: state.topping
   }
 }
 

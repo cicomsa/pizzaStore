@@ -1,11 +1,15 @@
 import React, {PureComponent} from 'react'
-import {REMOVE_BASE} from '../actions/bases'
+import {REM_BASE, PAY_BASE} from '../actions/bases'
 import {connect} from 'react-redux'
 
 class ShoppingCartBases extends PureComponent {
 
   handleCheckbox = (e) => {
-      this.props.dispatch({type:REMOVE_BASE,payload: e.target.value})
+      this.props.dispatch({type:REM_BASE,payload: e.target.value})
+  }
+
+  handleConfirm = (e) => {
+      this.props.dispatch({type:PAY_BASE,payload: e.target.value})
   }
 
   render() {
@@ -13,11 +17,11 @@ class ShoppingCartBases extends PureComponent {
     return (
       <div>
         <h1>Pizza Base</h1>
-          {this.props.base.map((base, index) => (
-            <h4 key={index}>
-              <li>{base.split(',')[0]}</li>
-              <p className="basePrice">€{base.split(',')[1]}</p>
-            </h4>)) }
+        {this.props.base.map((base,index) => (
+          <h4 key={index}>
+            <p>{base.split(',')[0]}</p>
+            <li className="basePrice">€{base.split(',')[1]}</li>
+          </h4>)) }
         <button onClick={this.handleCheckbox}>Edit choice</button>
       </div>
     )
@@ -26,7 +30,7 @@ class ShoppingCartBases extends PureComponent {
 
 const mapStateToProps = function (state) {
   return {
-    base:state.bases
+    base: state.base
   }
 }
 

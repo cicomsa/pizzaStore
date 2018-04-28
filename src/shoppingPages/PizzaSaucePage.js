@@ -1,11 +1,13 @@
 import React, {PureComponent} from 'react'
-import {ADD_SAUCE} from '../actions/sauces'
+import {ADD_SAUCE, PAY_SAUCE, SAUCE} from '../actions/sauces'
 import {connect} from 'react-redux'
 
 class PizzaSaucePage extends PureComponent {
 
   handleCheckbox = (e) => {
-      this.props.dispatch({type:ADD_SAUCE,payload: e.target.value})
+      this.props.dispatch({type:ADD_SAUCE, payload: e.target.value.split(',')[0]})
+      this.props.dispatch({type:PAY_SAUCE, payload: Number(e.target.value.split(',')[1])})
+      this.props.dispatch({type:SAUCE, payload: e.target.value})
   }
 
   render() {
