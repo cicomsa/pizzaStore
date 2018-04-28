@@ -7,8 +7,9 @@ export const addDelivery = () => {
   }
 }
 
-export const removeDelivery = () => {
+export const removeDelivery = (id) => {
   return {
     type: REMOVE_DELIVERY
+
   }
 }

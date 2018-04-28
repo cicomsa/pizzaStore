@@ -5,7 +5,7 @@ export default (state = 0, action) => {
     case ADD_DELIVERY:
       return 0.1
     case REMOVE_DELIVERY:
-      return state.filter(item => item.id !== action.payload.id)
+      return 0
     default:
       return state
   }
