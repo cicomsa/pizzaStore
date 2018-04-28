@@ -9,12 +9,12 @@ class ShoppingCartSauces extends PureComponent {
 
     return (
       <div>
-        <h2>Pizza Toppings</h2>
+        <h2>Pizza Sauces</h2>
           {this.props.sauce.map((sauce,index) => (
-            <p key={index}>
-              <li>{sauce}</li>
-              <p className="saucePrice">€{sauce.price}</p>
-            </p>)) }
+            <h4 key={index}>
+              <li>{sauce.split(',')[0]}</li>
+              <p className="saucePrice">€{sauce.split(',')[1]}</p>
+            </h4>)) }
       </div>
     )
   }

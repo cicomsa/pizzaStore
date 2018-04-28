@@ -1,5 +1,4 @@
 import React, {PureComponent} from 'react'
-import {pizzaBases} from '../pizzaStore/pizzaBases'
 import './PizzaBases.css'
 import {ADD_BASE, REMOVE_BASE} from '../actions/bases'
 import {connect} from 'react-redux'
@@ -35,16 +34,16 @@ class PizzaBasePage extends PureComponent {
           <thead>
             <tr>
               <th>Pizza Base</th>
-              <th class="priceTh">Price</th>
+              <th className="priceTh">Price</th>
             </tr>
           </thead>
           <tbody>
-            {pizzaBases.map(pizzaBase => (
+            {this.props.pizzaBases.map(pizzaBase => (
               <tr key={pizzaBase.id}>
                 <td className="base">
                   <input key={pizzaBase.id} type="checkbox"
                     name="base"
-                    value={pizzaBase.name}
+                    value={[pizzaBase.name, pizzaBase.price]}
                     onChange={this.handleCheckbox}
                     onClick={this.toggle.bind(this)}/>
                   <label htmlFor="base">{pizzaBase.name}</label>
@@ -60,7 +59,8 @@ class PizzaBasePage extends PureComponent {
 
 const mapStateToProps = function (state) {
   return {
-    items:state.checkbox
+    pizzaBases:state.pizzaBasess,
+    items:state.bases
   }
 }
 

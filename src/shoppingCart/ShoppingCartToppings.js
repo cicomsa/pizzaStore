@@ -10,11 +10,11 @@ class ShoppingCartToppings extends PureComponent {
     return (
       <div>
         <h2>Toppings</h2>
-          {this.props.topping.map((base,index) => (
-            <p key={index}>
-              <li>{base}</li>
-              <p className="toppingPrice">€{base.price}</p>
-            </p>)) }
+          {this.props.topping.map((topping,index) => (
+            <h4 key={index}>
+              <li>{topping.split(',')[0]}</li>
+              <p className="toppingPrice">€{topping.split(',')[1]}</p>
+            </h4>)) }
       </div>
     )
   }

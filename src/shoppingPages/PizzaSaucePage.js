@@ -1,5 +1,4 @@
 import React, {PureComponent} from 'react'
-import {pizzaSauces} from '../pizzaStore/pizzaSauces'
 import {ADD_SAUCE, REMOVE_SAUCE} from '../actions/sauces'
 import {connect} from 'react-redux'
 
@@ -38,12 +37,12 @@ class PizzaSaucePage extends PureComponent {
             </tr>
           </thead>
           <tbody>
-            {pizzaSauces.map(pizzaSauce => (
+            {this.props.pizzaSauces.map(pizzaSauce => (
               <tr key={pizzaSauce.id}>
                 <td className="sauce">
                   <input key={pizzaSauce.id} type="checkbox"
                     name="sauce"
-                    value={pizzaSauce.name}
+                    value={[pizzaSauce.name, pizzaSauce.price]}
                     onChange={this.handleCheckbox}
                     onClick={this.toggle.bind(this)}/>
                   <label htmlFor="sauce">{pizzaSauce.name}</label>
@@ -59,6 +58,7 @@ class PizzaSaucePage extends PureComponent {
 
 const mapStateToProps = function (state) {
   return {
+    pizzaSauces: state.pizzaSaucess,
     items:state.sauces
   }
 }

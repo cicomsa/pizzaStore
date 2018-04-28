@@ -10,11 +10,11 @@ class ShoppingCartBases extends PureComponent {
     return (
       <div>
         <h2>Pizza Base</h2>
-          {this.props.base.map((base,index) => (
-            <p key={index}>
-              <li>{base}</li>
-              <p className="basePrice">€{base.price}</p>
-            </p>)) }
+          {this.props.base.map((base, index) => (
+            <h4 key={index}>
+              <li>{base.split(',')[0]}</li>
+              <p className="basePrice">€{base.split(',')[1]}</p>
+            </h4>)) }
       </div>
     )
   }
