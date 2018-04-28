@@ -1,15 +1,11 @@
 import React, {PureComponent} from 'react'
-import {ADD_TOPPING, REMOVE_TOPPING} from '../actions/toppings'
+import {ADD_TOPPING} from '../actions/toppings'
 import {connect} from 'react-redux'
 
 class PizzaToppingPage extends PureComponent {
 
-  addItem = (e) => {
+  handleCheckbox = (e) => {
       this.props.dispatch({type:ADD_TOPPING,payload: e.target.value})
-  }
-
-  removeItem = (e) => {
-    this.props.dispatch({type:REMOVE_TOPPING, payload: e.target.value})
   }
 
   render() {
@@ -24,15 +20,15 @@ class PizzaToppingPage extends PureComponent {
             </tr>
           </thead>
           <tbody>
-
             {this.props.pizzaToppings.map(pizzaTopping => (
               <tr key={pizzaTopping.id}>
                 <td className="topping">
                   <form>
                     <input key={pizzaTopping.id} type="checkbox"
                       name="topping"
-                      value={[pizzaTopping.name,  pizzaTopping.price]}
-                      onChange={this.addItem}/>
+                      value={[pizzaTopping.name, pizzaTopping.price]}
+                      onChange={this.handleCheckbox}
+                    />
                     <label htmlFor="topping">{pizzaTopping.name}</label>
                   </form>
                 </td>
@@ -40,7 +36,7 @@ class PizzaToppingPage extends PureComponent {
               </tr>)) }
             </tbody>
         </table>
-        {this.props.items.length >= 3 && <p>Maximum 3 toppings allowed</p>}
+         <p style={{color:'red'}}>Three different toppings only</p>
       </div>
     )
   }
@@ -48,8 +44,7 @@ class PizzaToppingPage extends PureComponent {
 
 const mapStateToProps = function (state) {
   return {
-    pizzaToppings: state.pizzaToppingss,
-    items:state.toppings
+    pizzaToppings: state.pizzaToppingss
   }
 }
 

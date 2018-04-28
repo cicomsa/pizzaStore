@@ -1,29 +1,12 @@
 import React, {PureComponent} from 'react'
 import './PizzaBases.css'
-import {ADD_BASE, REMOVE_BASE} from '../actions/bases'
+import {ADD_BASE} from '../actions/bases'
 import {connect} from 'react-redux'
 
 class PizzaBasePage extends PureComponent {
 
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      checkboxState: true
-    }
-  }
-
-  toggle(event) {
-    this.setState({
-      checkboxState: !this.state.checkboxState
-    });
-  }
-
   handleCheckbox = (e) => {
-    if (this.state.checkboxState)
-      return this.props.dispatch({type:ADD_BASE,payload: e.target.value})
-    if (!this.state.checkboxState)
-      return this.props.dispatch({type:REMOVE_BASE, payload: e.target.value})
+      this.props.dispatch({type:ADD_BASE,payload: e.target.value})
   }
 
   render() {
@@ -45,11 +28,11 @@ class PizzaBasePage extends PureComponent {
                     name="base"
                     value={[pizzaBase.name, pizzaBase.price]}
                     onChange={this.handleCheckbox}
-                    onClick={this.toggle.bind(this)}/>
+                  />
                   <label htmlFor="base">{pizzaBase.name}</label>
                 </td>
                 <td className="pizzaPrice">€{pizzaBase.price}</td>
-              </tr>)) }
+                </tr>)) }
             </tbody>
         </table>
       </div>
@@ -59,8 +42,7 @@ class PizzaBasePage extends PureComponent {
 
 const mapStateToProps = function (state) {
   return {
-    pizzaBases:state.pizzaBasess,
-    items:state.bases
+    pizzaBases:state.pizzaBasess
   }
 }
 

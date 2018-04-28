@@ -1,28 +1,11 @@
 import React, {PureComponent} from 'react'
-import {ADD_SAUCE, REMOVE_SAUCE} from '../actions/sauces'
+import {ADD_SAUCE} from '../actions/sauces'
 import {connect} from 'react-redux'
 
 class PizzaSaucePage extends PureComponent {
 
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      checkboxState: true
-    }
-  }
-
-  toggle(event) {
-    this.setState({
-      checkboxState: !this.state.checkboxState
-    });
-  }
-
   handleCheckbox = (e) => {
-    if (this.state.checkboxState)
-      return this.props.dispatch({type:ADD_SAUCE,payload: e.target.value})
-    if (!this.state.checkboxState)
-      return this.props.dispatch({type:REMOVE_SAUCE, payload: e.target.value})
+      this.props.dispatch({type:ADD_SAUCE,payload: e.target.value})
   }
 
   render() {
@@ -44,7 +27,7 @@ class PizzaSaucePage extends PureComponent {
                     name="sauce"
                     value={[pizzaSauce.name, pizzaSauce.price]}
                     onChange={this.handleCheckbox}
-                    onClick={this.toggle.bind(this)}/>
+                  />
                   <label htmlFor="sauce">{pizzaSauce.name}</label>
                 </td>
                 <td className="saucePrice">€{pizzaSauce.price}</td>
@@ -58,8 +41,7 @@ class PizzaSaucePage extends PureComponent {
 
 const mapStateToProps = function (state) {
   return {
-    pizzaSauces: state.pizzaSaucess,
-    items:state.sauces
+    pizzaSauces: state.pizzaSaucess
   }
 }
 
