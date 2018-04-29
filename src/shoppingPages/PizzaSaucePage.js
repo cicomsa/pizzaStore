@@ -1,6 +1,6 @@
 import React, {PureComponent} from 'react'
-import {ADD_SAUCE, SAUCE, PAY_SAUCE} from '../actions/sauces'
-import {SUBTOTAL} from '../actions/totSub'
+import {ADD_SAUCE, PAY_SAUCE} from '../actions/sauces'
+import {TOTAL, SUBTOTAL} from '../actions/totSub'
 import {connect} from 'react-redux'
 
 class PizzaSaucePage extends PureComponent {
@@ -9,7 +9,7 @@ class PizzaSaucePage extends PureComponent {
       this.props.dispatch({type: ADD_SAUCE, payload: e.target.value.split(',')[0]})
       this.props.dispatch({type: SUBTOTAL, payload: Number(e.target.value.split(',')[1])})
       this.props.dispatch({type: PAY_SAUCE, payload: Number(e.target.value.split(',')[1])})
-      this.props.dispatch({type: SAUCE, payload: e.target.value})
+      this.props.dispatch({type: TOTAL, payload: Number(e.target.value.split(',')[1])})
   }
 
   render() {

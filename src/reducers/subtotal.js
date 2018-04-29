@@ -5,7 +5,7 @@ export default (state = 0, action) => {
     case SUBTOTAL:
       return action.payload + state
     case REMOVE_SUBTOTAL:
-      return state - action.payload
+      return action.payload
     default:
       return state
   }

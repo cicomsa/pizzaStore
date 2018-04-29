@@ -19,9 +19,9 @@ class Store extends PureComponent {
 
 const mapStateToProps = function (state) {
   return {
-    sauceStore: state.sauce,
-    baseStore:state.base,
-    toppingStore: state.topping
+    sauceStore: state.sauces,
+    baseStore:state.bases,
+    toppingStore: state.toppings
   }
 }
 

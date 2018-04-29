@@ -1,13 +1,13 @@
 import React, {PureComponent} from 'react'
-import {REM_BASE} from '../actions/bases'
+import {REMOVE_BASE, REMOVE_PAY_BASE} from '../actions/bases'
 import {REMOVE_SUBTOTAL} from '../actions/totSub'
 import {connect} from 'react-redux'
 
 class ShoppingCartBases extends PureComponent {
 
   handleCheckbox = (e) => {
-      this.props.dispatch({type: REM_BASE, payload: e.target.value})
-      this.props.dispatch({type: REMOVE_SUBTOTAL, payload: e.target.value})
+      this.props.dispatch({type: REMOVE_BASE, payload: e.target.value})
+      this.props.dispatch({type: REMOVE_PAY_BASE, payload: e.target.value})
   }
 
   render() {
@@ -27,8 +27,9 @@ class ShoppingCartBases extends PureComponent {
               <td></td>
               <td>€{this.props.price}</td>
             </tr>
-            </tbody>
+          </tbody>
         </table>
+        <button onClick={this.handleCheckbox}>Edit choice</button>
       </div>
     )
   }

@@ -1,13 +1,13 @@
 import React, {PureComponent} from 'react'
 import {pizzaSauces} from '../pizzaStore/pizzaSauces'
-import {REM_TOPPING, REMOVE_PAY_TOPPING} from '../actions/toppings'
+import {REMOVE_TOPPING, REMOVE_PAY_TOPPING} from '../actions/toppings'
 import {connect} from 'react-redux'
 
 class ShoppingCartToppings extends PureComponent {
 
   handleCheckbox = (e) => {
-      this.props.dispatch({type: REM_TOPPING,payload: e.target.value})
-      this.props.dispatch({type: REMOVE_PAY_TOPPING,payload: e.target.value})
+      this.props.dispatch({type: REMOVE_TOPPING,payload: e.target.value})
+        this.props.dispatch({type: REMOVE_PAY_TOPPING, payload: e.target.value})
   }
 
   render() {
@@ -48,6 +48,7 @@ class ShoppingCartToppings extends PureComponent {
               </tr>
             </tbody>
         </table>
+        <button onClick={this.handleCheckbox}>Edit choice</button>
       </div>
     )
   }

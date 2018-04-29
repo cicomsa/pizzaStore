@@ -27,9 +27,9 @@ class ShoppingCart extends PureComponent {
 
 const mapStateToProps = function (state) {
   return {
-    sauceCart: state.sauce,
-    baseCart:state.base,
-    toppingCart: state.topping
+    sauceCart: state.sauces,
+    baseCart:state.bases,
+    toppingCart: state.toppings
   }
 }
 
