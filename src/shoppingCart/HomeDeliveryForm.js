@@ -1,7 +1,8 @@
 import React, { PureComponent } from 'react';
 import {ADD_DELIVERY, REMOVE_DELIVERY} from '../actions/delivery'
+import {connect} from 'react-redux'
 
-export default class HomeDeliveryForm extends PureComponent {
+class HomeDeliveryForm extends PureComponent {
 
     constructor(props) {
       super(props);
@@ -28,13 +29,23 @@ export default class HomeDeliveryForm extends PureComponent {
   render() {
     return (
       <div className="homeDelivery">
-          <label htmlFor="0.1">Home delivery : 10% additional to your shopping cart total</label>
-          <br></br>
-          <input type="checkbox"
+        <label htmlFor="0.1">Home delivery : 10% additional to your shopping cart total</label>
+        <br></br>
+        <input type="checkbox"
           name="delivery"
           value="0.1"
-          />
+          onChange={this.handleCheckbox}
+          onClick={this.toggle.bind(this)}
+        />
       </div>
     );
   }
 }
+
+const mapStateToProps = function (state) {
+  return {
+    subtotal: state.totsub
+  }
+}
+
+export default connect(mapStateToProps)(HomeDeliveryForm)

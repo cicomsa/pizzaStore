@@ -27,7 +27,7 @@ export const payTopping = () => {
 export const removePayTopping = (id) => {
   return {
     type: REMOVE_PAY_TOPPING,
-    payload: id
+    id
   }
 }
 

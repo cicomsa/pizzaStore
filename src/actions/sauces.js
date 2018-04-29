@@ -27,7 +27,7 @@ export const paySauce = () => {
 export const removePaySauce = (id) => {
   return {
     type: REMOVE_PAY_SAUCE,
-    payload: id
+    id
   }
 }
 

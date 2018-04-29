@@ -9,7 +9,8 @@ import delivery from './delivery'
 import {pizzaBasess, pizzaToppingss, pizzaSaucess } from './store'
 import payBase from './payBase'
 import paySauce from './paySauce'
-import payToppings from './payToppings'
+import payTopping from './payToppings'
+import subtotal from './subtotal'
 
 export default {
   bases,
@@ -22,8 +23,9 @@ export default {
   pizzaToppingss,
   payBase,
   paySauce,
-  payToppings,
+  payTopping,
   topping,
   sauce,
-  base
+  base,
+  subtotal
 }

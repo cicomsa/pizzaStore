@@ -1,6 +1,6 @@
 import React, {PureComponent} from 'react'
-import {ADD_TOPPING, TOPPING} from '../actions/toppings'
-import {SUBTOTAL} from '../actions/totSub'
+import {ADD_TOPPING, TOPPING, PAY_TOPPING} from '../actions/toppings'
+import {TOTAL, SUBTOTAL} from '../actions/totSub'
 import {connect} from 'react-redux'
 
 class PizzaToppingPage extends PureComponent {
@@ -8,7 +8,9 @@ class PizzaToppingPage extends PureComponent {
   handleCheckbox = (e) => {
     this.props.dispatch({type: ADD_TOPPING, payload: e.target.value.split(',')[0]})
     this.props.dispatch({type: SUBTOTAL, payload: Number(e.target.value.split(',')[1])})
+    this.props.dispatch({type: PAY_TOPPING, payload: Number(e.target.value.split(',')[1])})
     this.props.dispatch({type: TOPPING, payload: e.target.value})
+    this.props.dispatch({type: TOTAL, payload: Number(e.target.value.split(',')[1])})
   }
   render() {
 

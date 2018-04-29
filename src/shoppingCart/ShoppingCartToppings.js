@@ -1,25 +1,53 @@
 import React, {PureComponent} from 'react'
 import {pizzaSauces} from '../pizzaStore/pizzaSauces'
-import {REM_TOPPING} from '../actions/toppings'
+import {REM_TOPPING, REMOVE_PAY_TOPPING} from '../actions/toppings'
 import {connect} from 'react-redux'
 
 class ShoppingCartToppings extends PureComponent {
 
   handleCheckbox = (e) => {
-      this.props.dispatch({type:REM_TOPPING,payload: e.target.value})
+      this.props.dispatch({type: REM_TOPPING,payload: e.target.value})
+      this.props.dispatch({type: REMOVE_PAY_TOPPING,payload: e.target.value})
   }
 
   render() {
 
     return (
       <div>
-        <h1>Toppings</h1>
-        {this.props.topping.map((topping,index) => (
-          <h4 key={index}>
-            <p>{topping.split(',')[0]}</p>
-            <li className="toppingPrice">€{topping.split(',')[1]}</li>
-          </h4>)) }
-        {this.props.topping.length === 3 && <button onClick={this.handleCheckbox}>Edit choice</button>}
+        <table>
+          <thead>
+            <tr>
+              <th>Pizza Base</th>
+              <th className="priceTh">Price</th>
+            </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>
+              <table >
+                <tbody>
+                  {this.props.name.map((name, index) => (
+                    <tr key={index}>
+                      <td >{name}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+                </td>
+                <td>
+                  <table >
+                    <tbody>
+                      {this.props.price.map((price, index) => (
+                        <tr key={index}>
+                          <td>{price}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+            </tbody>
+        </table>
       </div>
     )
   }
@@ -27,8 +55,10 @@ class ShoppingCartToppings extends PureComponent {
 
 const mapStateToProps = function (state) {
   return {
-    topping: state.topping
+    name: state.toppings,
+    price: state.payTopping
   }
 }
+
 
 export default connect(mapStateToProps )(ShoppingCartToppings)

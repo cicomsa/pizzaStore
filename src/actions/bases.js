@@ -29,7 +29,7 @@ export const payBase = () => {
 export const removePayBase = (id) => {
   return {
     type: REMOVE_PAY_BASE,
-    payload: id
+    id
   }
 }
 

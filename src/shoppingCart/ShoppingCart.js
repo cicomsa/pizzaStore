@@ -4,7 +4,7 @@ import ShoppingCartBases from './ShoppingCartBases'
 import ShoppingCartSauces from './ShoppingCartSauces'
 import ShoppingCartToppings from './ShoppingCartToppings'
 import HomeDelivery from './HomeDeliveryForm'
-import ToPay from './Subtotal'
+import Subtotal from './Subtotal'
 import Total from './Total'
 
 class ShoppingCart extends PureComponent {
@@ -12,7 +12,9 @@ class ShoppingCart extends PureComponent {
     return (
       <div className="shoppingCart">
         <h1>Shopping Cart</h1>
-        <ToPay/>
+        <Subtotal/>
+        <HomeDelivery/>
+        <Total/>
         <hr></hr>
         {this.props.baseCart.length === 1 && <ShoppingCartBases/>}
         {this.props.sauceCart.length === 1 && <ShoppingCartSauces/>}
