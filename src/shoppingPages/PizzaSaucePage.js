@@ -7,9 +7,9 @@ class PizzaSaucePage extends PureComponent {
 
   handleCheckbox = (e) => {
       this.props.dispatch({type: ADD_SAUCE, payload: e.target.value.split(',')[0]})
-      this.props.dispatch({type: SUBTOTAL, payload: Number(e.target.value.split(',')[1])})
+      //this.props.dispatch({type: SUBTOTAL, payload: Number(e.target.value.split(',')[1])})
       this.props.dispatch({type: PAY_SAUCE, payload: Number(e.target.value.split(',')[1])})
-      this.props.dispatch({type: TOTAL, payload: Number(e.target.value.split(',')[1])})
+      //this.props.dispatch({type: TOTAL, payload: Number(e.target.value.split(',')[1])})
   }
 
   render() {

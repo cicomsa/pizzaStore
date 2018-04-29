@@ -15,11 +15,13 @@ class ShoppingCart extends PureComponent {
         <Subtotal/>
         <HomeDelivery/>
         <Total/>
+        {this.props.toppingCart.length <= 3 &&
+          this.props.baseCart.length === 1 && this.props.sauceCart.length === 1 &&
+          <button onClick={() => window.location.reload()}> Empty Cart </button>}
         <hr></hr>
         {this.props.baseCart.length === 1 && <ShoppingCartBases/>}
         {this.props.sauceCart.length === 1 && <ShoppingCartSauces/>}
         {this.props.toppingCart.length >= 1 && this.props.toppingCart.length <= 3 && <ShoppingCartToppings/>}
-
       </div>
     );
   }

@@ -29,7 +29,7 @@ class ShoppingCartBases extends PureComponent {
             </tr>
           </tbody>
         </table>
-        <button onClick={this.handleCheckbox}>Edit choice</button>
+        <button forhtml={this.props.price} onClick={this.handleCheckbox}>Edit choice</button>
       </div>
     )
   }

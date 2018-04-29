@@ -6,7 +6,7 @@ class Subtotal extends PureComponent {
     return (
       <div className="shoppingCart">
         <h2>Total</h2>
-        <h4><li>€{this.props.subtotal + this.props.delivery}</li></h4>
+        <h4><li>€{(Number(this.props.sauce)+Number(this.props.base)+ this.props.total+this.props.delivery).toFixed(2)}</li></h4>
       </div>
     );
   }
@@ -14,7 +14,9 @@ class Subtotal extends PureComponent {
 
 const mapStateToProps = function (state) {
   return {
-    subtotal: state.totsub,
+    base: state.payBase,
+    sauce: state.paySauce,
+    total: state.totsub,
     delivery: state.delivery
   }
 }

@@ -1,15 +1,15 @@
 import React, {PureComponent} from 'react'
 import './PizzaBases.css'
 import {ADD_BASE, PAY_BASE} from '../actions/bases'
-import {TOTAL, SUBTOTAL} from '../actions/totSub'
+//import {TOTAL, SUBTOTAL} from '../actions/totSub'
 import {connect} from 'react-redux'
 
 class PizzaBasePage extends PureComponent {
 
   handleCheckbox = (e) => {
       this.props.dispatch({type: ADD_BASE, payload: e.target.value.split(',')[0]})
-      this.props.dispatch({type: SUBTOTAL, payload: Number(e.target.value.split(',')[1])})
-      this.props.dispatch({type: TOTAL, payload: Number(e.target.value.split(',')[1])})
+      //this.props.dispatch({type: SUBTOTAL, payload: Number(e.target.value.split(',')[1])})
+      //this.props.dispatch({type: TOTAL, payload: Number(e.target.value.split(',')[1])})
       this.props.dispatch({type: PAY_BASE, payload: Number(e.target.value.split(',')[1])})
   }
 
