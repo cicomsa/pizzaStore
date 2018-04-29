@@ -1,7 +1,6 @@
 import React, {PureComponent} from 'react'
-import {pizzaSauces} from '../pizzaStore/pizzaSauces'
 import {REMOVE_TOPPING, REMOVE_PAY_TOPPING} from '../actions/toppings'
-import {REMOVE_TOTAL} from '../actions/totSub'
+import {REMOVE_TOTAL} from '../actions/total'
 import {connect} from 'react-redux'
 
 class ShoppingCartToppings extends PureComponent {
@@ -16,11 +15,12 @@ class ShoppingCartToppings extends PureComponent {
 
     return (
       <div>
+        <hr></hr>
         <table>
           <thead>
             <tr>
-              <th>Pizza Base</th>
-              <th className="priceTh">Price</th>
+              <th className="nameThTop">Pizza Topping</th>
+              <th className="priceThTop">Price</th>
             </tr>
           </thead>
           <tbody>
@@ -30,7 +30,7 @@ class ShoppingCartToppings extends PureComponent {
                 <tbody>
                   {this.props.name.map((name, index) => (
                     <tr key={index}>
-                      <td >{name}</td>
+                      <td className="nameTop">{name}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -41,7 +41,7 @@ class ShoppingCartToppings extends PureComponent {
                     <tbody>
                       {this.props.price.map((price, index) => (
                         <tr key={index}>
-                          <td>{price}</td>
+                          <td className="priceTop">€{(price).toFixed(2)}</td>
                         </tr>
                       ))}
                     </tbody>
@@ -49,8 +49,9 @@ class ShoppingCartToppings extends PureComponent {
                 </td>
               </tr>
             </tbody>
+          {this.props.name.length === 3 && <button className="top" onClick={this.handleCheckbox}>Edit choice</button>}
         </table>
-        {this.props.name.length === 3 && <button onClick={this.handleCheckbox}>Edit choice</button>}
+
       </div>
     )
   }

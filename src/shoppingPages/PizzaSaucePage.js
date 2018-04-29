@@ -1,15 +1,12 @@
 import React, {PureComponent} from 'react'
 import {ADD_SAUCE, PAY_SAUCE} from '../actions/sauces'
-import {TOTAL, SUBTOTAL} from '../actions/totSub'
 import {connect} from 'react-redux'
 
 class PizzaSaucePage extends PureComponent {
 
   handleCheckbox = (e) => {
       this.props.dispatch({type: ADD_SAUCE, payload: e.target.value.split(',')[0]})
-      //this.props.dispatch({type: SUBTOTAL, payload: Number(e.target.value.split(',')[1])})
       this.props.dispatch({type: PAY_SAUCE, payload: Number(e.target.value.split(',')[1])})
-      //this.props.dispatch({type: TOTAL, payload: Number(e.target.value.split(',')[1])})
   }
 
   render() {
@@ -20,7 +17,7 @@ class PizzaSaucePage extends PureComponent {
           <thead>
             <tr>
               <th>Pizza Sauce</th>
-              <th>Price</th>
+              <th className="priceTh">Price</th>
             </tr>
           </thead>
           <tbody>
@@ -34,7 +31,7 @@ class PizzaSaucePage extends PureComponent {
                   />
                   <label htmlFor="sauce">{pizzaSauce.name}</label>
                 </td>
-                <td className="saucePrice">€{pizzaSauce.price}</td>
+                <td className="price">€{pizzaSauce.price}</td>
               </tr>)) }
             </tbody>
         </table>

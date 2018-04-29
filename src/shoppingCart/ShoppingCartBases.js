@@ -1,6 +1,5 @@
 import React, {PureComponent} from 'react'
 import {REMOVE_BASE, REMOVE_PAY_BASE} from '../actions/bases'
-import {REMOVE_SUBTOTAL} from '../actions/totSub'
 import {connect} from 'react-redux'
 
 class ShoppingCartBases extends PureComponent {
@@ -18,18 +17,18 @@ class ShoppingCartBases extends PureComponent {
           <thead>
             <tr>
               <th>Pizza Base</th>
-              <th className="priceTh">Price</th>
+              <th className="priceShop">Price</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>{this.props.name}</td>
-              <td></td>
-              <td>€{this.props.price}</td>
+              <td className="name">{this.props.name}</td>
+              <td className="priceShop">€{this.props.price}</td>
             </tr>
           </tbody>
+          <button onClick={this.handleCheckbox}>Edit choice</button>
         </table>
-        <button forhtml={this.props.price} onClick={this.handleCheckbox}>Edit choice</button>
+
       </div>
     )
   }

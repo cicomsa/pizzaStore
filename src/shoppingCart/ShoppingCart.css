@@ -1,0 +1,54 @@
+table {
+  text-align: center;
+  text-align: left;
+  margin-left: 20px;
+}
+button {
+  margin-top: 7px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    border: 0.5px solid;
+    border-radius: 5px;
+}
+
+button:hover {
+  background-color: red;
+  color: white;
+}
+
+h1 {
+  text-align: center;
+  font-size: 40px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+h3 {
+  font-size: 22px;
+}
+
+p {
+  font-size: 20px;
+}
+
+.shoppingCart{
+  text-align: center;
+}
+
+.priceShop {
+  padding-left: 20px;
+}
+
+.top {
+  margin-left: 23px;
+}
+
+.priceThTop {
+  padding-left: 24px;
+}
+
+.nameThTop {
+  padding-left: 22px;
+}

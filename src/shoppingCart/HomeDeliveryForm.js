@@ -44,7 +44,7 @@ class HomeDeliveryForm extends PureComponent {
 
 const mapStateToProps = function (state) {
   return {
-    subtotal: state.totsub
+    subtotal: state.total
   }
 }
 

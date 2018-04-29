@@ -1,13 +1,13 @@
 import React, {PureComponent} from 'react'
 import {ADD_TOPPING, PAY_TOPPING} from '../actions/toppings'
-import {TOTAL, SUBTOTAL} from '../actions/totSub'
+import {TOTAL} from '../actions/total'
 import {connect} from 'react-redux'
+
 
 class PizzaToppingPage extends PureComponent {
 
   handleCheckbox = (e) => {
     this.props.dispatch({type: ADD_TOPPING, payload: e.target.value.split(',')[0]})
-    this.props.dispatch({type: SUBTOTAL, payload: Number(e.target.value.split(',')[1])})
     this.props.dispatch({type: PAY_TOPPING, payload: Number(e.target.value.split(',')[1])})
     this.props.dispatch({type: TOTAL, payload: Number(e.target.value.split(',')[1])})
   }
@@ -19,7 +19,7 @@ class PizzaToppingPage extends PureComponent {
           <thead>
             <tr>
               <th>Pizza Topping</th>
-              <th>Price</th>
+              <th className="priceTh">Price</th>
             </tr>
           </thead>
           <tbody>
@@ -35,11 +35,11 @@ class PizzaToppingPage extends PureComponent {
                     <label htmlFor="topping">{pizzaTopping.name}</label>
                   </form>
                 </td>
-                <td className="toppingPrice">€{pizzaTopping.price}</td>
+                <td className="price">€{pizzaTopping.price}</td>
               </tr>)) }
             </tbody>
         </table>
-         <p style={{color:'red'}}>Three different toppings only</p>
+         <p>Three different toppings only</p>
       </div>
     )
   }

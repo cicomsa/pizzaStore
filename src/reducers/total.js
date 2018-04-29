@@ -1,4 +1,4 @@
-import {TOTAL, REMOVE_TOTAL} from '../actions/totSub'
+import {TOTAL, REMOVE_TOTAL} from '../actions/total'
 
 export default (state = 0, action) => {
   switch(action.type) {

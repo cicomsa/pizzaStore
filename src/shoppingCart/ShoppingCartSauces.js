@@ -17,18 +17,18 @@ class ShoppingCartSauces extends PureComponent {
           <thead>
             <tr>
               <th>Pizza Sauce</th>
-              <th className="priceTh">Price</th>
+              <th className="priceShop">Price</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>{this.props.name}</td>
-              <td></td>
-              <td>€{this.props.price}</td>
+              <td className="name">{this.props.name}</td>
+              <td className="priceShop">€{this.props.price}</td>
             </tr>
           </tbody>
+          <button onClick={this.handleCheckbox}>Edit choice</button>
         </table>
-        <button onClick={this.handleCheckbox}>Edit choice</button>
+
       </div>
     )
   }

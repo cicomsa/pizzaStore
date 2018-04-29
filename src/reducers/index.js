@@ -1,29 +1,23 @@
-import bases from './bases'
-
-import toppings from './toppings'
-
-import sauces from './sauces'
-
-import totsub from './totsub'
-import delivery from './delivery'
 import {pizzaBasess, pizzaToppingss, pizzaSaucess } from './store'
+import bases from './bases'
+import toppings from './toppings'
+import sauces from './sauces'
 import payBase from './payBase'
 import paySauce from './paySauce'
 import payTopping from './payToppings'
-import subtotal from './subtotal'
+import total from './total'
+import delivery from './delivery'
 
 export default {
-  bases,
-  toppings,
-  sauces,
-  totsub,
-  delivery,
   pizzaBasess,
   pizzaSaucess,
   pizzaToppingss,
+  bases,
+  toppings,
+  sauces,
   payBase,
   paySauce,
   payTopping,
-
-  subtotal
+  total,
+  delivery
 }
