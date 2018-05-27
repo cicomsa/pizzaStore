@@ -49,9 +49,14 @@ class ShoppingCartToppings extends PureComponent {
                 </td>
               </tr>
             </tbody>
-          {this.props.name.length === 3 && <button className="top" onClick={this.handleCheckbox}>Edit choice</button>}
+            <tbody>
+            <tr>
+              <td>
+              {this.props.name.length === 3 && <button className="top" onClick={this.handleCheckbox}>Edit choice</button>}
+              </td>
+            </tr>
+          </tbody> 
         </table>
-
       </div>
     )
   }

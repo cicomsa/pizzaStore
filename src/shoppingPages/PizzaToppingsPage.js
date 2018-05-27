@@ -30,6 +30,7 @@ class PizzaToppingPage extends PureComponent {
                       name="topping"
                       value={[pizzaTopping.name, pizzaTopping.price]}
                       onChange={this.handleCheckbox}
+                      
                     />
                     <label htmlFor="topping">{pizzaTopping.name}</label>
                   </form>
