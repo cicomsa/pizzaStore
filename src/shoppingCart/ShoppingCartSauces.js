@@ -26,8 +26,9 @@ class ShoppingCartSauces extends PureComponent {
               <td className="priceShop">€{this.props.price}</td>
             </tr>
           </tbody>
+          <button onClick={this.handleCheckbox}>Edit choice</button>
         </table>
-        <button className="sauceButton" onClick={this.handleCheckbox}>Edit choice</button>
+
       </div>
     )
   }

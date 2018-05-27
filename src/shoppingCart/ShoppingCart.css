@@ -25,32 +25,30 @@ h2 {
   font-size: 30px;
 }
 
-h3,
-.nameThTop {
-  margin-left: 22px;
+h3 {
+  font-size: 22px;
 }
 
-p,
-.priceShop,
-.baseButton,
-.sauceButton,
-.empty {
-  margin-left: 20px;
+p {
+  font-size: 20px;
 }
 
 .shoppingCart{
   text-align: center;
 }
 
+.priceShop {
+  padding-left: 20px;
+}
+
+.top {
+  margin-left: 23px;
+}
+
 .priceThTop {
   padding-left: 24px;
 }
 
-.top {
-  margin-right: 900px;
-}
-
-.check {
-  margin-left: 24px;
-  border-radius: 5px;
+.nameThTop {
+  padding-left: 22px;
 }

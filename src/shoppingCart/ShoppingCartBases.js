@@ -24,11 +24,11 @@ class ShoppingCartBases extends PureComponent {
             <tr>
               <td className="name">{this.props.name}</td>
               <td className="priceShop">€{this.props.price}</td>
-              <td onClick={this.handleCheckbox}>Enter</td>
             </tr>
           </tbody>
+          <button onClick={this.handleCheckbox}>Edit choice</button>
         </table>
-        <button className="baseButton" onClick={this.handleCheckbox}>Edit choice</button>
+
       </div>
     )
   }

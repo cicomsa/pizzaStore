@@ -31,7 +31,7 @@ class HomeDeliveryForm extends PureComponent {
       <div className="homeDelivery">
         <label htmlFor="0.1">Home delivery : 10% additional to your shopping cart total</label>
         <br></br>
-        <input className="check" type="checkbox"
+        <input type="checkbox"
           name="delivery"
           value="0.1"
           onChange={this.handleCheckbox}

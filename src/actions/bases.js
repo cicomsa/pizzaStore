@@ -20,7 +20,6 @@ export const removeBase = (id) => {
 export const payBase = () => {
   return {
     type: PAY_BASE,
-
   }
 }
 
