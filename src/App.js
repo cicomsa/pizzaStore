@@ -12,7 +12,7 @@ class App extends Component {
         <ShoppingCart/>
         <br></br>
       </div>
-    );
+    )
   }
 }
 

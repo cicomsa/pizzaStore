@@ -1,6 +1,6 @@
 import React, {PureComponent} from 'react'
-import {REMOVE_SAUCE,REMOVE_PAY_SAUCE} from '../actions/sauces'
 import {connect} from 'react-redux'
+import {REMOVE_SAUCE,REMOVE_PAY_SAUCE} from '../actions/sauces'
 
 class ShoppingCartSauces extends PureComponent {
 

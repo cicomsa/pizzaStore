@@ -12,12 +12,17 @@ class ShoppingCart extends PureComponent {
         <table>
           <tbody>
             <tr>
-              <td>{this.props.baseCart.length === 1 && <ShoppingCartBases/>}</td>
-              <td>{this.props.sauceCart.length === 1 && <ShoppingCartSauces/>}</td>
-          </tr>
+              <td>
+                {this.props.baseCart.length === 1 && <ShoppingCartBases/>}
+              </td>
+              <td>
+                {this.props.sauceCart.length === 1 && <ShoppingCartSauces/>}
+             </td>
+           </tr>
           </tbody>
         </table>
-        {this.props.toppingCart.length >= 1 && this.props.toppingCart.length <= 3 && <ShoppingCartToppings/>}
+        {this.props.toppingCart.length >= 1 && 
+          this.props.toppingCart.length <= 3 && <ShoppingCartToppings/>}
       </div>
     )
   }

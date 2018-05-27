@@ -13,7 +13,7 @@ class ShoppingCart extends PureComponent {
         <Subtotal/>
         <HomeDelivery/>
         <Total/>
-        <button onClick={() => window.location.reload()}> Empty Cart </button>
+        <button onClick={() => window.location.reload()}>Empty Cart</button>
         <hr></hr>
         <ShoppingCarts/>
       </div>

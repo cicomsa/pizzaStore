@@ -1,6 +1,6 @@
 import React, {PureComponent} from 'react'
-import {REMOVE_BASE, REMOVE_PAY_BASE} from '../actions/bases'
 import {connect} from 'react-redux'
+import {REMOVE_BASE, REMOVE_PAY_BASE} from '../actions/bases'
 
 class ShoppingCartBases extends PureComponent {
 

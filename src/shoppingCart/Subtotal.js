@@ -8,7 +8,8 @@ class Subtotal extends PureComponent {
     return (
       <div className="shoppingCart">
         <h3>Subtotal</h3>
-        <p>€{(Number(this.props.sauce)+Number(this.props.base)+ this.props.total).toFixed(2)}</p>
+        <p>€{(Number(this.props.sauce)+
+          Number(this.props.base)+ this.props.total).toFixed(2)}</p>
       </div>
     );
   }

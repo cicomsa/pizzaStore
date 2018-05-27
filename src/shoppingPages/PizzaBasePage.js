@@ -5,8 +5,10 @@ import {connect} from 'react-redux'
 class PizzaBasePage extends PureComponent {
 
   handleCheckbox = (e) => {
-      this.props.dispatch({type: ADD_BASE, payload: e.target.value.split(',')[0]})
-      this.props.dispatch({type: PAY_BASE, payload: Number(e.target.value.split(',')[1])})
+      this.props.dispatch({type: ADD_BASE, 
+        payload: e.target.value.split(',')[0]})
+      this.props.dispatch({type: PAY_BASE, 
+        payload: Number(e.target.value.split(',')[1])})
   }
 
   render() {

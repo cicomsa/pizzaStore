@@ -1,7 +1,7 @@
 import React, {PureComponent} from 'react'
+import {connect} from 'react-redux'
 import {REMOVE_TOPPING, REMOVE_PAY_TOPPING} from '../actions/toppings'
 import {REMOVE_TOTAL} from '../actions/total'
-import {connect} from 'react-redux'
 
 class ShoppingCartToppings extends PureComponent {
 
@@ -52,7 +52,12 @@ class ShoppingCartToppings extends PureComponent {
             <tbody>
             <tr>
               <td>
-              {this.props.name.length === 3 && <button className="top" onClick={this.handleCheckbox}>Edit choice</button>}
+                {this.props.name.length === 3 && 
+                  <button className="top" 
+                    onClick={this.handleCheckbox}>
+                    Edit choice
+                  </button>
+                }
               </td>
             </tr>
           </tbody> 

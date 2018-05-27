@@ -10,8 +10,11 @@ class Store extends PureComponent {
     return (
       <div className="store">
         {this.props.baseStore.length === 0 && <PizzaBasePage/>}
-        {this.props.sauceStore.length === 0 && this.props.baseStore.length === 1 && <PizzaSaucePage/>}
-        {this.props.sauceStore.length === 1 && this.props.baseStore.length === 1 && this.props.toppingStore.length <= 2 && <PizzaToppingsPage/>}
+        {this.props.sauceStore.length === 0 && 
+          this.props.baseStore.length === 1 && <PizzaSaucePage/>}
+        {this.props.sauceStore.length === 1 && 
+          this.props.baseStore.length === 1 && 
+          this.props.toppingStore.length <= 2 && <PizzaToppingsPage/>}
       </div>
     );
   }

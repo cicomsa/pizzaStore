@@ -1,6 +1,6 @@
-import React, { PureComponent } from 'react';
-import {ADD_DELIVERY, REMOVE_DELIVERY} from '../actions/delivery'
+import React, { PureComponent } from 'react'
 import {connect} from 'react-redux'
+import {ADD_DELIVERY, REMOVE_DELIVERY} from '../actions/delivery'
 
 class HomeDeliveryForm extends PureComponent {
 
@@ -29,7 +29,9 @@ class HomeDeliveryForm extends PureComponent {
   render() {
     return (
       <div className="homeDelivery">
-        <label htmlFor="0.1">Home delivery : 10% additional to your shopping cart total</label>
+        <label htmlFor="0.1">
+          Home delivery : 10% additional to your shopping cart total
+        </label>
         <br></br>
         <input type="checkbox"
           name="delivery"
