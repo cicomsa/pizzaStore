@@ -2,7 +2,7 @@
 
 ## Project description
 
-This project was made as an assignment, where I could showcase my knowledge and understanding in React and Redux.
+This project was made as an assignment, through which to showcase my knowledge and understanding in React and Redux.
 
 **The goal of the app is**
 
