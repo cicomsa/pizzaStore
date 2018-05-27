@@ -4,7 +4,7 @@
 
 This project was made as an assignment, through which to showcase my knowledge and understanding in React and Redux.
 
-**The goal of the app is**
+**The goal of the app is:**
 
 * To have built a single-page web application, front-end only.
 * Users can add and/or delete from their pizza order: 1 base, 1 sauce, 3 toppings only.
