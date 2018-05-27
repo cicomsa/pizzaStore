@@ -4,11 +4,11 @@ table {
   margin-left: 20px;
 }
 button {
-  margin-top: 7px;
-    -webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
-    border: 0.5px solid;
-    border-radius: 5px;
+  margin-bottom: 5px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  border: 0.5px solid;
+  border-radius: 5px;
 }
 
 button:hover {
@@ -23,6 +23,7 @@ h1 {
 
 h2 {
   font-size: 30px;
+  margin-top: -5px;
 }
 
 h3 {

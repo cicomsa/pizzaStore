@@ -1,8 +1,7 @@
 import React, {PureComponent} from 'react'
+import {connect} from 'react-redux'
 import {ADD_TOPPING, PAY_TOPPING} from '../actions/toppings'
 import {TOTAL} from '../actions/total'
-import {connect} from 'react-redux'
-
 
 class PizzaToppingPage extends PureComponent {
 
