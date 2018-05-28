@@ -1,6 +1,6 @@
 import React, {PureComponent} from 'react'
-import {ADD_SAUCE, PAY_SAUCE} from '../actions/sauces'
 import {connect} from 'react-redux'
+import {ADD_SAUCE, PAY_SAUCE} from '../actions/sauces'
 
 class PizzaSaucePage extends PureComponent {
 

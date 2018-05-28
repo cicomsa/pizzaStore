@@ -1,6 +1,6 @@
 import React, {PureComponent} from 'react'
-import {ADD_BASE, PAY_BASE} from '../actions/bases'
 import {connect} from 'react-redux'
+import {ADD_BASE, PAY_BASE} from '../actions/bases'
 
 class PizzaBasePage extends PureComponent {
 
